@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="justblog-api:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>justblog-api</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="justblog-api-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="justblog-api:war exploded" />
+    </root>
+  </artifact>
+</component>

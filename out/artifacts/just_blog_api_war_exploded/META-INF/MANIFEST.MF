@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: hamid
+Build-Jdk: 1.8.0_232
+Implementation-Title: justblog-api
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.hamidsultanzadeh
+Main-Class: ${start-class}
+
