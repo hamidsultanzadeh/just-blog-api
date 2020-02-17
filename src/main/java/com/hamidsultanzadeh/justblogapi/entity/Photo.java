@@ -2,12 +2,13 @@ package com.hamidsultanzadeh.justblogapi.entity;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 import java.util.List;
 
 @Table(name = "photo")
 @XmlRootElement
 @Entity
-public class Photo {
+public class Photo implements Serializable {
 
     private static final Long serialVersion = 1L;
 

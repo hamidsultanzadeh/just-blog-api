@@ -50,4 +50,32 @@ public class UserRestController {
         return ResponseEntity.status(HttpStatus.OK).body(new ResponseDTO(2,"OK!",users));
     }
 
+    @GetMapping("/userler")
+    public ResponseEntity getSabalid(@RequestParam(value = "uid",required = false) Integer id){
+
+        if(id != null){
+            User user = userServiceInter.findById(id);
+
+            if(user == null)
+                return ResponseEntity.status(HttpStatus.OK).body(new ResponseDTO(1,"Not found",new ArrayList<>()));
+
+
+            com.hamidsultanzadeh.justblogapi.dto.User userRes =
+                    new com.hamidsultanzadeh.justblogapi.dto.User(user);
+
+            return ResponseEntity.status(HttpStatus.OK).body(
+                    new ResponseDTO(3,"OK!",new ArrayList<>(Collections.singletonList(userRes))));
+
+        }
+
+        List<User> userList = userServiceInter.findAll();
+        List<com.hamidsultanzadeh.justblogapi.dto.User> users = new ArrayList<>();
+
+        userList.forEach(u -> {
+            users.add(new com.hamidsultanzadeh.justblogapi.dto.User(u));
+        });
+
+        return ResponseEntity.status(HttpStatus.OK).body(new ResponseDTO(2,"OK!",users));
+    }
+
 }
